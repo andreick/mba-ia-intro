@@ -1,0 +1,12 @@
+from langchain_core.runnables import RunnableLambda
+
+
+def parse_number(text: str) -> int:
+    return int(text.strip())
+
+
+# Create a RunnableLambda from the function
+parse_number_runnable = RunnableLambda(parse_number)
+
+number = parse_number_runnable.invoke("  42  ")
+print(number)
