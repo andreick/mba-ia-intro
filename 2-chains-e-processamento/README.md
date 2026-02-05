@@ -43,12 +43,29 @@ Envolvimento de funções Python simples em um Runnable.
 python 2-chains-e-processamento/3-runnable-lambda.py
 ```
 
+### [4-chains-pipeline.py](4-chains-pipeline.py)
+Pipeline complexo com múltiplas transformações encadeadas.
+
+**Características:**
+- `StrOutputParser` para converter saída do modelo em texto simples
+- Múltiplas chains compostas em um pipeline sequencial
+- Uso de dicionários para mapeamento de entradas entre estágios
+- Fluxo: Tradução → Resumo (2 transformações encadeadas)
+- Demonstra processamento em múltiplos estágios de um documento
+
+```bash
+python 2-chains-e-processamento/4-chains-pipeline.py
+```
+
 ## Conceitos Aprendidos
 
 - **Pipes e Composição**: Uso do operador `|` para compor componentes
 - **Runnables**: Entidade base do LangChain para criar fluxos de processamento
 - **Decorator @chain**: Transformar funções Python em componentes de chain
 - **RunnableLambda**: Converter funções simples em Runnables reutilizáveis
+- **Output Parsers**: `StrOutputParser` para converter saída de modelos em texto simples
 - **Fluxo de Dados**: Como dados fluem através de componentes compostos
 - **Processamento Intermediário**: Adicionar lógica customizada entre componentes
+- **Pipelines Complexos**: Criar pipelines com múltiplos estágios de transformação
+- **Mapeamento de Entradas**: Usar dicionários para mapear dados entre componentes
 - **Invocação de Chains**: Execução de chains com `.invoke()`
