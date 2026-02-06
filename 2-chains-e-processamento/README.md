@@ -57,15 +57,43 @@ Pipeline complexo com múltiplas transformações encadeadas.
 python 2-chains-e-processamento/4-chains-pipeline.py
 ```
 
+### [5-summarize.py](5-summarize.py)
+Resumo direto de um documento longo usando uma chain simples.
+
+**Características:**
+- `ChatPromptTemplate.from_template()` para criar prompts simples
+- Resumo direto de texto longo sem divisão prévia
+- Chain simplificada: Prompt → Model → Parser
+- Abordagem direta ideal para textos que cabem no contexto do modelo
+- Demonstra caso básico de sumarização
+
+```bash
+python 2-chains-e-processamento/5-summarize.py
+```
+
+### [6-summarize-map-reduce.py](6-summarize-map-reduce.py)
+Padrão Map-Reduce para resumir documentos muito longos em múltiplos estágios.
+
+**Características:**
+- `RecursiveCharacterTextSplitter` para dividir textos longos em chunks
+- Padrão **Map**: resume cada chunk individualmente com `.map()`
+- Padrão **Reduce**: combina todas as resumências em uma única resumência
+- Pipeline com múltiplos estágios: divisão → transformação de inputs → map → join → reduce
+- Uso de `RunnableLambda` para funções de transformação (`to_inputs`, `join_summaries`)
+- Suporte para `.stream()` para obter resultados incrementados
+- Ideal para documentos que não cabem no contexto da primeira passada
+
+```bash
+python 2-chains-e-processamento/6-summarize-map-reduce.py
+```
+
 ## Conceitos Aprendidos
 
-- **Pipes e Composição**: Uso do operador `|` para compor componentes
-- **Runnables**: Entidade base do LangChain para criar fluxos de processamento
-- **Decorator @chain**: Transformar funções Python em componentes de chain
-- **RunnableLambda**: Converter funções simples em Runnables reutilizáveis
-- **Output Parsers**: `StrOutputParser` para converter saída de modelos em texto simples
-- **Fluxo de Dados**: Como dados fluem através de componentes compostos
-- **Processamento Intermediário**: Adicionar lógica customizada entre componentes
-- **Pipelines Complexos**: Criar pipelines com múltiplos estágios de transformação
-- **Mapeamento de Entradas**: Usar dicionários para mapear dados entre componentes
-- **Invocação de Chains**: Execução de chains com `.invoke()`
+- **Composição com Pipes**: Operador `|` para encadear componentes
+- **Runnables**: Bloco de construção fundamental para fluxos de processamento
+- **Decoradores e Lambdas**: `@chain` e `RunnableLambda` para criar componentes customizados
+- **Output Parsers**: Converter saídas de modelos em formatos específicos
+- **Text Splitters**: Dividir documentos longos em chunks com tamanho e sobreposição configuráveis
+- **Templates de Prompt**: `PromptTemplate` e `ChatPromptTemplate` para prompts reutilizáveis
+- **Padrão Map-Reduce**: Processar múltiplos chunks em dois estágios (map e reduce)
+- **Streaming**: Obter resultados incrementados com `.stream()`
