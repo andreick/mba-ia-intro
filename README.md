@@ -24,6 +24,12 @@ Configure suas chaves de API:
 ### [1-fundamentos/](1-fundamentos)
 Exemplos básicos de inicialização e uso de modelos de chat com diferentes provedores.
 
+### [2-chains-e-processamento/](2-chains-e-processamento)
+Exemplos de criação e composição de chains para processamento de dados e prompts.
+
+### [3-agentes-e-tools/](3-agentes-e-tools)
+Exemplo de agente ReAct com ferramentas customizadas (calculadora e busca de capitais).
+
 ## Executando os Exemplos
 
 Cada pasta contém seu próprio README com instruções específicas de execução.
