@@ -30,6 +30,12 @@ Exemplos de criação e composição de chains para processamento de dados e pro
 ### [3-agentes-e-tools/](3-agentes-e-tools)
 Exemplo de agente ReAct com ferramentas customizadas (calculadora e busca de capitais).
 
+### [4-gerenciamento-de-memoria/](4-gerenciamento-de-memoria)
+Exemplos de estratégias para armazenar e gerenciar o histórico de conversas.
+
+### [5-loaders-e-banco-de-dados-vetoriais/](5-loaders-e-banco-de-dados-vetoriais)
+Exemplos de ingestão, armazenamento e busca em bancos vetoriais.
+
 ## Executando os Exemplos
 
 Cada pasta contém seu próprio README com instruções específicas de execução.
